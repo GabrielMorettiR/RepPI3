@@ -20,9 +20,9 @@ public class ConexaoBD {
         }
     }
     public static Connection getConexao() throws ClassNotFoundException, SQLException{
-        String url = "jdbc:derby://localhost:1527/PI3";
-        String user = "PI3";
-        String password = "PI3";
+        String url = "jdbc:derby://localhost:1527/NerdolasDB";
+        String user = "adm";
+        String password = "123";
         return DriverManager.getConnection(url, user, password);
     }
     

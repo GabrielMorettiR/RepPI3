@@ -25,7 +25,9 @@ public class ClienteDAO {
                 String nome = rs.getString("nome");
                 String email = rs.getString("email");
                 Long cpf = rs.getLong("cpf");
-                listaClientes.add(new Cliente(nome, email, cpf));
+                String tel = rs.getString("telefone");
+                String end = rs.getString("endereco");
+                listaClientes.add(new Cliente(nome, email, cpf, tel, end));
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ServletBD.class.getName()).log(Level.SEVERE, null, ex);
@@ -33,6 +35,18 @@ public class ClienteDAO {
             Logger.getLogger(ServletBD.class.getName()).log(Level.SEVERE, null, ex);
         }
         return listaClientes;
+    }
+    
+    public static void addCliente(Cliente cliente) throws ClassNotFoundException, SQLException{
+        Connection con = ConexaoBD.getConexao();
+        String query = "insert into cliente(nome, cpf, telefone, endereco, email) values (?,?,?,?,?)";
+        PreparedStatement ps = con.prepareStatement(query);
+        ps.setString(1, cliente.getNome());
+        ps.setLong(2, cliente.getCpf());
+        ps.setString(3, cliente.getTelefone());
+        ps.setString(4, cliente.getEndereco());
+        ps.setString(5, cliente.getEmail());
+        ps.execute();
     }
 
 }

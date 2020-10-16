@@ -4,9 +4,25 @@
         <servlet-name>ServletBD</servlet-name>
         <servlet-class>PacoteServlet.ServletBD</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListarClientes</servlet-name>
+        <servlet-class>PacoteServlet.ListarClientes</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CadastrarClientes</servlet-name>
+        <servlet-class>PacoteServlet.CadastrarClientes</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletBD</servlet-name>
         <url-pattern>/ServletBD</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarClientes</servlet-name>
+        <url-pattern>/ListarClientes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CadastrarClientes</servlet-name>
+        <url-pattern>/CadastrarClientes</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

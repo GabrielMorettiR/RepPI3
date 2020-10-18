@@ -1,4 +1,9 @@
+D:\Documentos\GIt\pi3teste\PI3\src\main\java\PacoteUtils\Utils.java
 D:\Documentos\GIt\pi3teste\PI3\src\main\java\PacotePrincipal\ConexaoBD.java
 D:\Documentos\GIt\pi3teste\PI3\src\main\java\PacoteServlet\ServletBD.java
 D:\Documentos\GIt\pi3teste\PI3\src\main\java\Entidades\Cliente.java
+D:\Documentos\GIt\pi3teste\PI3\src\main\java\PacoteServlet\AlterarClientes.java
+D:\Documentos\GIt\pi3teste\PI3\src\main\java\PacoteServlet\CadastrarClientes.java
+D:\Documentos\GIt\pi3teste\PI3\src\main\java\PacoteServlet\ExcluirClientes.java
+D:\Documentos\GIt\pi3teste\PI3\src\main\java\PacoteServlet\ListarClientes.java
 D:\Documentos\GIt\pi3teste\PI3\src\main\java\PacotePrincipal\ClienteDAO.java

@@ -12,6 +12,22 @@
         <servlet-name>CadastrarClientes</servlet-name>
         <servlet-class>PacoteServlet.CadastrarClientes</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditarClientes</servlet-name>
+        <servlet-class>PacoteServlet.EditarClientes</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AlterarClientes</servlet-name>
+        <servlet-class>PacoteServlet.AlterarClientes</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AlterarCliente</servlet-name>
+        <servlet-class>PacoteServlet.AlterarClientes</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ExcluirClientes</servlet-name>
+        <servlet-class>PacoteServlet.ExcluirClientes</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletBD</servlet-name>
         <url-pattern>/ServletBD</url-pattern>
@@ -23,6 +39,22 @@
     <servlet-mapping>
         <servlet-name>CadastrarClientes</servlet-name>
         <url-pattern>/CadastrarClientes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditarClientes</servlet-name>
+        <url-pattern>/EditarClientes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AlterarClientes</servlet-name>
+        <url-pattern>/AlterarClientes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AlterarCliente</servlet-name>
+        <url-pattern>/AlterarCliente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ExcluirClientes</servlet-name>
+        <url-pattern>/ExcluirClientes</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -13,6 +13,8 @@
     </head>
     <body>
         <h1>A operação foi encerrada com erro</h1>
+        <br/>
+        ${msgErro}
         <a href="index.jsp">Voltar</a>
     </body>
 </html>

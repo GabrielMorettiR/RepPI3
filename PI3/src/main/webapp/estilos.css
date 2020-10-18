@@ -1,0 +1,36 @@
+h1{
+    font-family: 'Commissioner', sans-serif;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.p_form{
+    font-family: 'Poppins', sans-serif;
+}
+
+/*css btn voltar*/
+#voltar{
+    color: #333333;
+    transition-duration: 0.2s;
+    position: relative;
+    padding-right: 5px;
+}
+#voltar:hover{
+    text-shadow:0 0 5px #222;
+    animation: mymove 0.2s;
+    animation-fill-mode:forwards;
+    animation-timing-function: ease;
+}
+#voltar:not(:hover){
+    animation: mymoveback 0.2s;
+    animation-timing-function: ease;
+}
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 4px;}
+}
+@keyframes mymoveback {
+    from {left: 4px;}
+    to {left: 0px;}
+}

@@ -1,4 +1,4 @@
-Sistema para loja de Jogos
+Sistema para loja de Jogos // Código na Main
 
 ==Os Nerdolas==
 

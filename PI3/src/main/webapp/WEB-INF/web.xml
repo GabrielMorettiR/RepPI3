@@ -28,6 +28,10 @@
         <servlet-name>ExcluirClientes</servlet-name>
         <servlet-class>PacoteServlet.ExcluirClientes</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListarProduto</servlet-name>
+        <servlet-class>PacoteServlet.ListarProduto</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletBD</servlet-name>
         <url-pattern>/ServletBD</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>ExcluirClientes</servlet-name>
         <url-pattern>/ExcluirClientes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarProduto</servlet-name>
+        <url-pattern>/ListarProduto</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

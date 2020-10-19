@@ -37,7 +37,6 @@ public class CadastrarClientes extends HttpServlet {
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(CadastrarClientes.class.getName()).log(Level.SEVERE, null, ex);
             Utils.Erro(ex, request, response);
-
         }
     }
 }

@@ -31,15 +31,15 @@ public class ProdutoDAO extends HttpServlet {
             PreparedStatement ps = con.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
+                int id = rs.getInt("id");
                 String nome = rs.getString("nome");
-                String categoria = rs.getString("categoria");
+                String desc = rs.getString("descricao");
+                int categoria = rs.getInt("idcategoria");
                 int quantidade = rs.getInt("quantidade");
-                float preço = rs.getFloat("preço");
-                listaProdutos.add(new Produto(nome, categoria, quantidade, preço));
+                double preco = rs.getDouble("preco");
+                listaProdutos.add(new Produto(id, nome, desc, categoria, quantidade, preco));
             }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ServletBD.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ServletBD.class.getName()).log(Level.SEVERE, null, ex);
         }
         return listaProdutos;
@@ -47,12 +47,13 @@ public class ProdutoDAO extends HttpServlet {
     
     public static void addProduto (Produto p) throws ClassNotFoundException, SQLException{  //CREATE
         Connection con = ConexaoBD.getConexao();
-        String query = "insert into produto(nome, categoria, quantidade, preço) values (?,?,?,?)";
+        String query = "insert into produto(nome, descricao, idcategoria, quantidade, preco) values (?,?,?,?,?)";
         PreparedStatement ps = con.prepareStatement(query);
-        ps.setString(1, p.getNome());
-        ps.setString(2, p.getCategoria());
-        ps.setInt(3, p.getQuantidade());
-        ps.setDouble(4, p.getPreço());
+        ps.setString(2, p.getNome());
+        ps.setString(3, p.getDescricao());
+        ps.setInt(4, p.getCategoria());
+        ps.setInt(5, p.getQuantidade());
+        ps.setDouble(6, p.getPreco());
         ps.execute();
     }
     

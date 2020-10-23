@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class ProdutoDAO extends HttpServlet {
 
-    public static List<Produto> getProdutos(){  //RETRIEVE
+    public static List<Produto> getProdutos() {  //RETRIEVE
         List<Produto> listaProdutos = new ArrayList();
         try {
             Connection con = ConexaoBD.getConexao();
@@ -44,24 +44,60 @@ public class ProdutoDAO extends HttpServlet {
         }
         return listaProdutos;
     }
-    
-    public static void addProduto (Produto p) throws ClassNotFoundException, SQLException{  //CREATE
+
+    public static Produto getProduto(int id) {
+        Produto p = null;
+        Connection con;
+        try {
+            con = ConexaoBD.getConexao();
+            String query = "select * from produto where id=?";
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                String nome = rs.getString("nome");
+                String desc = rs.getString("descricao");
+                int categ = Integer.parseInt(rs.getString("idcategoria"));
+                int qtd = Integer.parseInt(rs.getString("quantidade"));
+                double preco = Double.parseDouble(rs.getString("preco"));
+                p = new Produto(id, nome, desc, categ, qtd, preco);
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return p;
+    }
+
+    public static void addProduto(Produto p) throws ClassNotFoundException, SQLException {  //CREATE
         Connection con = ConexaoBD.getConexao();
         String query = "insert into produto(nome, descricao, idcategoria, quantidade, preco) values (?,?,?,?,?)";
         PreparedStatement ps = con.prepareStatement(query);
-        ps.setString(2, p.getNome());
-        ps.setString(3, p.getDescricao());
-        ps.setInt(4, p.getCategoria());
-        ps.setInt(5, p.getQuantidade());
-        ps.setDouble(6, p.getPreco());
+        ps.setString(1, p.getNome());
+        ps.setString(2, p.getDescricao());
+        ps.setInt(3, p.getCategoria());
+        ps.setInt(4, p.getQuantidade());
+        ps.setDouble(5, p.getPreco());
+        ps.execute();
+    }
+
+    public static void updateProduto(Produto p) throws ClassNotFoundException, SQLException {
+        Connection con = ConexaoBD.getConexao();
+        String query = "update produto set nome=?,descricao=?,idcategoria=?,quantidade=?,preco=? where id=?";
+        PreparedStatement ps = con.prepareStatement(query);
+        ps.setString(1, p.getNome());
+        ps.setString(2, p.getDescricao());
+        ps.setInt(3, p.getCategoria());
+        ps.setInt(4, p.getQuantidade());
+        ps.setDouble(5, p.getPreco());
+        ps.setInt(6, p.getId());
         ps.execute();
     }
     
-    public static void atualizarProduto (Produto p) throws ClassNotFoundException, SQLException{
-                    Connection con = ConexaoBD.getConexao();
-                    String query = "";
-
+    public static void deleteProduto(int id) throws ClassNotFoundException, SQLException {
+        Connection con = ConexaoBD.getConexao();
+        String query = "delete from produto where id=?";
+        PreparedStatement ps = con.prepareStatement(query);
+        ps.setLong(1, id);
+        ps.execute();
     }
-    //UPDATE
-    //DELETE
 }

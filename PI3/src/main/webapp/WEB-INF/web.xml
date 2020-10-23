@@ -32,6 +32,18 @@
         <servlet-name>ListarProduto</servlet-name>
         <servlet-class>PacoteServlet.ListarProduto</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AlterarProduto</servlet-name>
+        <servlet-class>PacoteServlet.AlterarProduto</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ExcluirProduto</servlet-name>
+        <servlet-class>PacoteServlet.ExcluirProduto</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CadastrarProduto</servlet-name>
+        <servlet-class>PacoteServlet.CadastrarProduto</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletBD</servlet-name>
         <url-pattern>/ServletBD</url-pattern>
@@ -63,6 +75,18 @@
     <servlet-mapping>
         <servlet-name>ListarProduto</servlet-name>
         <url-pattern>/ListarProduto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AlterarProduto</servlet-name>
+        <url-pattern>/AlterarProduto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ExcluirProduto</servlet-name>
+        <url-pattern>/ExcluirProduto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CadastrarProduto</servlet-name>
+        <url-pattern>/CadastrarProduto</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

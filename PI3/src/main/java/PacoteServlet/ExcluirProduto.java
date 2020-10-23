@@ -5,7 +5,7 @@
  */
 package PacoteServlet;
 
-import PacotePrincipal.ClienteDAO;
+import PacotePrincipal.ProdutoDAO;
 import PacoteUtils.Utils;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -21,19 +21,18 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Gabriel
  */
-public class ExcluirClientes extends HttpServlet {
-    
+public class ExcluirProduto extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Long cpf = Long.parseLong(request.getParameter("cpf"));
+        int id = Integer.parseInt(request.getParameter("id"));
         try {
-            ClienteDAO.deleteCliente(cpf);
+            ProdutoDAO.deleteProduto(id);
             Utils.Sucesso(response);
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(ExcluirClientes.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ExcluirProduto.class.getName()).log(Level.SEVERE, null, ex);
             Utils.Erro(ex, request, response);
         }
     }
-
 }

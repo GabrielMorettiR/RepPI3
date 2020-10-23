@@ -15,53 +15,10 @@
         <link href="estilos.css" rel="stylesheet">
         <title>Lista de Clientes</title>
 
-        <style>
-            .tabclientes{
-                background-color: #abbeec;
-                border: 2px solid #587ac8;
-                border-radius: 5px;
-            }
-            .tabclientes thead, th{
-                font-family: 'Commissioner', sans-serif;
-                border-right: 2px solid #587ac8;
-                border-bottom: 2px solid #587ac8;
-                border-radius: 2px;
-            }
-            .tabclientes tbody{
-                font-family: 'Poppins', sans-serif;
-            }
-
-            .options{
-                width: 80px;
-                text-align: center;   
-            }
-            #alter{
-                color: white;
-                background-color: #31923a;
-                transition-duration: 0.2s;
-            }
-            #alter:hover{
-                color: #31923a;
-                background-color: white;
-            }
-            #excluir{
-                color: white;
-                background-color: #da5252;
-                transition-duration: 0.2s;
-            }
-            #excluir:hover{
-                color: #da5252;
-                background-color: white;
-            }
-            .option{
-                margin: 0 0 0 0;
-                border-radius: 5px;
-            }
-        </style>
     </head>
     <body>
         <h1><a id="voltar" href="index.jsp">◀</a>Clientes mais daorinhas</h1>
-            <table class="tabclientes">
+            <table class="tab">
                 <thead>
                 <th>Nome</th>
                 <th>Email</th>

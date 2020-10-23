@@ -9,9 +9,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!--insert into produto('id', 'nome', 'descricao', 'categoria', 'quantidade', 'preco') values ('0','jogo','jogo de tiro',,'','')-->
-
-        
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="https://fonts.googleapis.com/css2?family=Commissioner&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
@@ -20,7 +17,7 @@
     </head>
     <body>
         <h1><a id="voltar" href="index.jsp">◀</a>produtos mais daorinhas</h1>
-        <table class="tabprodutos">
+        <table class="tab">
             <thead>
                 <th>Nome</th>
                 <th>Descrição</th>
@@ -36,6 +33,8 @@
                     <td>${produto.categoria}</td>
                     <td>${produto.quantidade}</td>
                     <td>R$ ${produto.preco}</td>
+                    <td class="options"><a href="AlterarProduto?id=${produto.id}"><p id="alter" class="option">Alterar</p></a></td>
+                    <td class="options"><a href="ExcluirProduto?id=${produto.id}" onclick="return confirm('Are you sure you want to delete?')"><p id="excluir" class="option">Excluir</p></a></td>
                 </tr>
             </c:forEach>
             </tbody>

@@ -42,7 +42,7 @@
             <a href="ListarClientes"><p>Lista de Clientes</p></a>
             <a href="cadastrarClientes.jsp"><p>Cadastrar Clientes</p></a>
             <a href="ListarProduto"><p>Lista de Produtos</p></a>
-            <a href="cadastrarProdutos.jsp"><p>Cadastrar Clientes</p></a>
+            <a href="cadastrarProdutos.jsp"><p>Cadastrar Produtos</p></a>
         </div>
     </body>
 </html>

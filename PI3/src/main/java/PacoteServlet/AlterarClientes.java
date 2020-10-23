@@ -46,7 +46,7 @@ public class AlterarClientes extends HttpServlet {
         
         try {
             ClienteDAO.updateCliente(cliente);
-            response.sendRedirect("sucesso.jsp");
+            Utils.Sucesso(response);
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(AlterarClientes.class.getName()).log(Level.SEVERE, null, ex);
             Utils.Erro(ex, request, response);

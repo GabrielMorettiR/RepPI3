@@ -12,9 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>A operação foi encerrada com erro</h1>
-        <br/>
-        ${msgErro}
+        <h1>Operação executada com erro parsa /:</h1>
         <a href="index.jsp">Voltar</a>
     </body>
 </html>

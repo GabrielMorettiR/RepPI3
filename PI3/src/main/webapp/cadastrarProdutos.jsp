@@ -18,7 +18,7 @@
     <body>
         <h1><a id="voltar" href="index.jsp">◀</a>criando um novo produtin</h1>
         <form action="CadastrarProduto" method="POST">
-            <input name="id" type="hidden" value="${produto.id}">
+            <input name="id" type="" value="${count}">
             <p class="p_form">Nome</p>
             <input name="nome">
             <p class="p_form">descrição</p>

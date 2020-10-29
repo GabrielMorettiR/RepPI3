@@ -28,9 +28,7 @@ public class ClienteDAO {
                 String end = rs.getString("endereco");
                 listaClientes.add(new Cliente(nome, email, cpf, tel, end));
             }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ServletBD.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ServletBD.class.getName()).log(Level.SEVERE, null, ex);
         }
         return listaClientes;

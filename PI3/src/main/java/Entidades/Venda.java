@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Entidades;
 
 import lombok.Getter;
@@ -15,20 +10,22 @@ import lombok.Setter;
 @Getter
 @Setter
 
-
 public class Venda {
-    private int idVenda;   
-    
+    private int idVenda;
+    private int idproduto;
     private long cpf;
-    private double totalVenda;
-
-    public Venda(int idVenda, long cpf, double totalVenda) {
+    private int quantidade;
+    private double preco;
+    private int filial;
+    
+    public Venda(int idVenda, int idproduto, long cpf, int quantidade, double preco, int filial) {
         this.idVenda = idVenda;
-        
-        this.cpf = cpf;        
-        this.totalVenda = totalVenda;
+        this.idproduto = idproduto;
+        this.cpf = cpf;
+        this.quantidade = quantidade;
+        this.preco = preco;
+        this.filial = filial;
     }
-
 
     @Override
     public String toString() {

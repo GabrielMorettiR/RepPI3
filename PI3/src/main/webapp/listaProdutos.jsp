@@ -34,7 +34,7 @@
                     <td>${produto.quantidade}</td>
                     <td>R$ ${produto.preco}</td>
                     <td class="options"><a href="AlterarProduto?id=${produto.id}"><p id="alter" class="option">Alterar</p></a></td>
-                    <td class="options"><a href="ExcluirProduto?id=${produto.id}" onclick="return confirm('Are you sure you want to delete?')"><p id="excluir" class="option">Excluir</p></a></td>
+                    <td class="options"><a href="ExcluirProduto?id=${produto.id}" onclick="return confirm('Confirma a exclusão do produto ${produto.nome}?')"><p id="excluir" class="option">Excluir</p></a></td>
                 </tr>
             </c:forEach>
             </tbody>

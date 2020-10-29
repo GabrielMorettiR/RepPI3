@@ -2,8 +2,6 @@ package PacotePrincipal;
 
 import Entidades.Produto;
 import PacoteServlet.ServletBD;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,11 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 /**
  *
  * @author Bruno
@@ -99,5 +93,21 @@ public class ProdutoDAO extends HttpServlet {
         PreparedStatement ps = con.prepareStatement(query);
         ps.setLong(1, id);
         ps.execute();
+    }
+    
+    public static int count() {  //RETRIEVE
+        int count = 0;
+        try {
+            Connection con = ConexaoBD.getConexao();
+            String query = "select count(*) from produto";
+            PreparedStatement ps = con.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                count = rs.getInt("1");
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(ServletBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return count;
     }
 }

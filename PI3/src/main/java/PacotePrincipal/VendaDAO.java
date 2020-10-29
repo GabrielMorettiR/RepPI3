@@ -22,7 +22,7 @@ import java.util.logging.Logger;
  * @author ivanyuratakano
  */
 public class VendaDAO {
-     public static List<Venda> getVenda() {  //RETRIEVE
+     public static List<Venda> getVendas() {  //RETRIEVE
         List<Venda> listaVenda = new ArrayList();
         try {
             Connection con = ConexaoBD.getConexao();
@@ -30,12 +30,14 @@ public class VendaDAO {
             PreparedStatement ps = con.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                
                 int idVenda = rs.getInt("idvenda");
-                Long cpf = rs.getLong("cpf");                               
-                double totalVenda = rs.getDouble("total");
+                int idproduto = rs.getInt("id");
+                long cpf = rs.getLong("cpf");
+                int quantidade = rs.getInt("quantidade");
+                double preco = rs.getDouble("preco");
+                int filial = rs.getInt("idfilial");
                 
-                listaVenda.add(new Venda(idVenda, cpf, totalVenda));
+                listaVenda.add(new Venda(idVenda, idproduto, cpf, quantidade, preco, filial));
             }
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ServletBD.class.getName()).log(Level.SEVERE, null, ex);
@@ -45,25 +47,18 @@ public class VendaDAO {
      
      public static void addVenda(Venda venda) throws ClassNotFoundException, SQLException {
         Connection con = ConexaoBD.getConexao();
-        String query = "insert into venda(idvenda, cpf, total) values (?,?,?)";
+        String query = "insert into venda (id, cpf, quantidade, preco, idfilial) values (?,?,?,?,?)";
         PreparedStatement ps = con.prepareStatement(query);
-        ps.setInt(1, venda.getIdVenda());
+        ps.setInt(1, venda.getIdproduto());
         ps.setLong(2, venda.getCpf());
-        ps.setDouble(3, venda.getTotalVenda());        
-        ps.execute();
-    }
-      public static void updateVenda(Venda venda) throws ClassNotFoundException, SQLException {
-        Connection con = ConexaoBD.getConexao();
-        String query = "update venda set cpf=?,total=?, where idvenda=?";
-        PreparedStatement ps = con.prepareStatement(query);
-        ps.setLong(1, venda.getCpf());
-        ps.setDouble(2, venda.getTotalVenda());        
-        ps.setInt(3, venda.getIdVenda());
+        ps.setInt(3, venda.getQuantidade());
+        ps.setDouble(4, venda.getPreco());
+        ps.setInt(5, venda.getFilial());
         ps.execute();
     }
       public static void deleteVenda(int idVenda) throws ClassNotFoundException, SQLException {
         Connection con = ConexaoBD.getConexao();
-        String query = "delete from venda where = idvenda = ?";
+        String query = "delete from venda where idvenda = ?";
         PreparedStatement ps = con.prepareStatement(query);
         ps.setInt(1, idVenda);
         ps.execute();
@@ -77,14 +72,15 @@ public class VendaDAO {
             ps.setLong(1, idVenda);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
+                int idproduto = rs.getInt("id");
                 long cpf = rs.getLong("cpf");
-                double total = rs.getDouble("total");                
-                venda = new Venda(idVenda, cpf, total);
+                int quantidade = rs.getInt("quantidade");
+                double preco = rs.getDouble("preco");
+                int filial = rs.getInt("idfilial");
+                venda = new Venda(idVenda, idproduto, cpf, quantidade, preco, filial);
             }
 
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ServletBD.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ServletBD.class.getName()).log(Level.SEVERE, null, ex);
         }
         return venda;

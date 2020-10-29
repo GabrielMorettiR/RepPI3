@@ -43,6 +43,8 @@
             <a href="cadastrarClientes.jsp"><p>Cadastrar Clientes</p></a>
             <a href="ListarProduto"><p>Lista de Produtos</p></a>
             <a href="cadastrarProdutos.jsp"><p>Cadastrar Produtos</p></a>
+            <a href="Relatorio"><p>Relatório</p></a>
+            <a href="venda.jsp"><p>Realizar Venda</p></a>
         </div>
     </body>
 </html>

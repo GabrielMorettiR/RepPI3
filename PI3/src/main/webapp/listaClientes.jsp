@@ -4,7 +4,6 @@
     Author     : Gabriel
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,29 +17,29 @@
     </head>
     <body>
         <h1><a id="voltar" href="index.jsp">◀</a>Clientes mais daorinhas</h1>
-            <table class="tab">
-                <thead>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>CPF</th>
-                <th>Endereço</th>
-                <th>Telefone</th>
-            </thead>
-            <tbody>
-                <c:set var = "i" scope = "session" value = "${0}"/>
-                <c:forEach var="cliente" items="${listaClientes}">
-                    <c:set var = "i" scope = "session" value = "${i+1}"/>
-                    <tr id="row${i}">
-                        <td>${cliente.nome}</td>
-                        <td>${cliente.email}</td>
-                        <td>${cliente.cpf}</td>
-                        <td>${cliente.endereco}</td>
-                        <td>${cliente.telefone}</td>
-                        <td class="options"><a href="AlterarClientes?cpf=${cliente.cpf}"><p id="alter" class="option">Alterar</p></a></td>
-                        <td class="options"><a href="ExcluirClientes?cpf=${cliente.cpf}" onclick="return confirm('Are you sure you want to delete?')"><p id="excluir" class="option">Excluir</p></a></td>
-                    </tr>
-                </c:forEach>
-            </tbody>
-        </table>
-    </body>
+        <table class="tab">
+            <thead>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>CPF</th>
+            <th>Endereço</th>
+            <th>Telefone</th>
+        </thead>
+        <tbody>
+            <c:set var = "i" scope = "session" value = "${0}"/>
+            <c:forEach var="cliente" items="${listaClientes}">
+                <c:set var = "i" scope = "session" value = "${i+1}"/>
+                <tr id="row${i}">
+                    <td>${cliente.nome}</td>
+                    <td>${cliente.email}</td>
+                    <td>${cliente.cpf}</td>
+                    <td>${cliente.endereco}</td>
+                    <td>${cliente.telefone}</td>
+                    <td class="options"><a href="AlterarClientes?cpf=${cliente.cpf}"><p id="alter" class="option">Alterar</p></a></td>
+                    <td class="options"><a href="ExcluirClientes?cpf=${cliente.cpf}" onclick="return confirm('Confirma a exclusão do cliente ${cliente.nome}?')"><p id="excluir" class="option">Excluir</p></a></td>
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
+</body>
 </html>

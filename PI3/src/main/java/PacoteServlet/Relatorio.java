@@ -1,8 +1,9 @@
 package PacoteServlet;
 
-import Entidades.Cliente;
-import PacotePrincipal.ClienteDAO;
+import Entidades.Venda;
+import PacotePrincipal.VendaDAO;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,17 +15,18 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Gabriel
  */
-public class ListarClientes extends HttpServlet {
+public class Relatorio extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        List<Cliente> listaClientes = ClienteDAO.getClientes();
-        request.setAttribute("listaClientes", listaClientes);
+        List<Venda> listaVendas = VendaDAO.getVendas();
+        request.setAttribute("listaVendas", listaVendas);
         
-        RequestDispatcher requestDispatcher = getServletContext()
-                .getRequestDispatcher("/listaClientes.jsp");
-        requestDispatcher.forward(request, response);
+        RequestDispatcher rd = getServletContext()
+                .getRequestDispatcher("/listaVendas.jsp");
+        rd.forward(request, response);
     }
+
 }

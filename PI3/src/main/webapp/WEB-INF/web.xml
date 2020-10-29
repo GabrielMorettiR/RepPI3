@@ -44,6 +44,18 @@
         <servlet-name>CadastrarProduto</servlet-name>
         <servlet-class>PacoteServlet.CadastrarProduto</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CadastrarVenda</servlet-name>
+        <servlet-class>PacoteServlet.CadastrarVenda</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListarVendas</servlet-name>
+        <servlet-class>PacoteServlet.ListarVendas</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Relatorio</servlet-name>
+        <servlet-class>PacoteServlet.Relatorio</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletBD</servlet-name>
         <url-pattern>/ServletBD</url-pattern>
@@ -87,6 +99,14 @@
     <servlet-mapping>
         <servlet-name>CadastrarProduto</servlet-name>
         <url-pattern>/CadastrarProduto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CadastrarVenda</servlet-name>
+        <url-pattern>/CadastrarVenda</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Relatorio</servlet-name>
+        <url-pattern>/Relatorio</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

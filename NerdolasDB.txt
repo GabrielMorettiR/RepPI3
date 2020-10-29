@@ -33,7 +33,7 @@ FOREIGN KEY(id) REFERENCES produto(id);
 ALTER TABLE venda ADD CONSTRAINT cpf
 FOREIGN KEY(cpf) REFERENCES cliente(cpf);
 
-create table venda(
+create table categoria(
 idvenda int primary key generated always as identity,
 titulo char(20)
 );

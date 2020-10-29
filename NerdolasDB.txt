@@ -1,0 +1,39 @@
+create table cliente(
+nome char(30),
+cpf char(11) primary key,
+email char(40),
+telefone char(11),
+endereco char(40)
+);
+
+create table produto(
+id int primary key generated always as identity,
+nome char(30),
+descricao char(60),
+idcategoria smallint,
+quantidade int,
+preco double
+);
+
+ALTER TABLE produto ADD CONSTRAINT idcategoria
+FOREIGN KEY(idcategoria) REFERENCES categoria(id);
+
+
+create table venda(
+idvenda int primary key generated always as identity,
+id int,
+cpf char(11),
+quantidade int,
+preco double
+);
+
+ALTER TABLE venda ADD CONSTRAINT idproduto
+FOREIGN KEY(id) REFERENCES produto(id);
+
+ALTER TABLE venda ADD CONSTRAINT cpf
+FOREIGN KEY(cpf) REFERENCES cliente(cpf);
+
+create table venda(
+idvenda int primary key generated always as identity,
+titulo char(20)
+);

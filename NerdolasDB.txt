@@ -24,7 +24,8 @@ idvenda int primary key generated always as identity,
 id int,
 cpf char(11),
 quantidade int,
-preco double
+preco double,
+idfilial int
 );
 
 ALTER TABLE venda ADD CONSTRAINT idproduto
@@ -32,6 +33,9 @@ FOREIGN KEY(id) REFERENCES produto(id);
 
 ALTER TABLE venda ADD CONSTRAINT cpf
 FOREIGN KEY(cpf) REFERENCES cliente(cpf);
+
+ALTER TABLE venda ADD CONSTRAINT idfilial
+FOREIGN KEY(idfilial) REFERENCES filial(idfilial);
 
 create table categoria(
 idvenda int primary key generated always as identity,

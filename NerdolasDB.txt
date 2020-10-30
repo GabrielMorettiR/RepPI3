@@ -28,6 +28,12 @@ id smallint primary key generated always as identity,
 titulo char(20)
 );
 
+create table filial(
+idfilial int primary key generated always as identity,
+nome char(30),
+endereco char(40)
+)
+
 ALTER TABLE produto ADD CONSTRAINT idcategoria
 FOREIGN KEY(idcategoria) REFERENCES categoria(id);
 
@@ -36,3 +42,6 @@ FOREIGN KEY(id) REFERENCES produto(id);
 
 ALTER TABLE venda ADD CONSTRAINT cpf
 FOREIGN KEY(cpf) REFERENCES cliente(cpf);
+
+ALTER TABLE venda ADD CONSTRAINT idfilial
+FOREIGN KEY(idfilial) REFERENCES filial(idfilial);

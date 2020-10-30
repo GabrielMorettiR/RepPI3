@@ -37,3 +37,9 @@ create table categoria(
 idvenda int primary key generated always as identity,
 titulo char(20)
 );
+
+create table filial(
+idfilial int primary key generated always as identity,
+nome char(30),
+endereco char(40)
+)

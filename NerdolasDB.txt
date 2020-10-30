@@ -38,7 +38,7 @@ ALTER TABLE venda ADD CONSTRAINT idfilial
 FOREIGN KEY(idfilial) REFERENCES filial(idfilial);
 
 create table categoria(
-idvenda int primary key generated always as identity,
+idcategoria int primary key generated always as identity,
 titulo char(20)
 );
 

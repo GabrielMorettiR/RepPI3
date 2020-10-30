@@ -15,35 +15,24 @@ quantidade int,
 preco double
 );
 
-ALTER TABLE produto ADD CONSTRAINT idcategoria
-FOREIGN KEY(idcategoria) REFERENCES categoria(id);
-
-
 create table venda(
 idvenda int primary key generated always as identity,
 id int,
 cpf char(11),
 quantidade int,
-preco double,
-idfilial int
+preco double
 );
+
+create table categoria(
+id smallint primary key generated always as identity,
+titulo char(20)
+);
+
+ALTER TABLE produto ADD CONSTRAINT idcategoria
+FOREIGN KEY(idcategoria) REFERENCES categoria(id);
 
 ALTER TABLE venda ADD CONSTRAINT idproduto
 FOREIGN KEY(id) REFERENCES produto(id);
 
 ALTER TABLE venda ADD CONSTRAINT cpf
 FOREIGN KEY(cpf) REFERENCES cliente(cpf);
-
-ALTER TABLE venda ADD CONSTRAINT idfilial
-FOREIGN KEY(idfilial) REFERENCES filial(idfilial);
-
-create table categoria(
-idcategoria int primary key generated always as identity,
-titulo char(20)
-);
-
-create table filial(
-idfilial int primary key generated always as identity,
-nome char(30),
-endereco char(40)
-)

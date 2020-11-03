@@ -4,6 +4,7 @@
     Author     : Gabriel
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,7 +17,7 @@
 
     </head>
     <body>
-        <h1><a id="voltar" href="index.jsp">◀</a>Clientes mais daorinhas</h1>
+        <h1><a id="voltar" href="index.jsp">◀</a>Lista completa de Clientes</h1>
         <table class="tab">
             <thead>
             <th>Nome</th>

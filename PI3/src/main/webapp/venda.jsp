@@ -10,42 +10,34 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Venda</title>
 
         <link href="https://fonts.googleapis.com/css2?family=Commissioner&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
         <link href="estilos.css" rel="stylesheet">
     </head>
     <body>
-        <h1><a id="voltar" href="index.jsp">◀</a>Realizando vendinha</h1>
+        <h1><a id="voltar" href="index.jsp">◀</a>Nova Venda</h1>
         <form action="CadastrarVenda" method="POST">
-            <input name="idvenda" type="hidden" value="${venda.idVenda}">
-
             <p class="p_form">idproduto</p>
-            <input name="idproduto">
-            
-<!--            <select name="produto" id="idproduto">
-                <%--<c:forEach var="produto" items="${listaProduto}">--%>
-                    <option value="${produto.id} - ${produto.nome}"></option>
-                <%--</c:forEach>--%>
+            <input class="input_form" name="idproduto">
+            <p class="p_form">cpf do Cliente</p>
+            <input class="input_form" name="cpf">
+<!--            <select name="SelCliente" class="form-control">
+                <c:forEach var="cliente" items="${listaClientes}">
+                    <option value="${cliente.cpf}">
+                        - ${cliente.cpf}
+                    </option>
+                </c:forEach>
             </select>-->
 
-            <p class="p_form">cpf do Cliente</p>
-            <input name="cpf">
-            
-<!--            <select name="cpf" id="cpf">
-                <%--<c:forEach var="cliente" items="${listaClientes}">--%>
-                    <option value="${cliente.cpf}"></option>
-                <%--</c:forEach>--%>
-            </select>-->
-                
             <p class="p_form">quantidade</p>
-            <input name="quantidade">
+            <input class="input_form" name="quantidade">
             <p class="p_form">preço</p>
-            <input name="preco">
+            <input class="input_form" name="preco">
             <p class="p_form">Id Filial</p>
-            <input name="filial">
-            <button type="submit">Enviar</button>
+            <input class="input_form" name="filial">
+            <button type="submit" class="submit">Enviar</button>
         </form>
     </body>
 </html>

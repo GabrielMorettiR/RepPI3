@@ -16,7 +16,7 @@
         <title>Lista de Produtos</title>
     </head>
     <body>
-        <h1><a id="voltar" href="index.jsp">◀</a>produtos mais daorinhas</h1>
+        <h1><a id="voltar" href="index.jsp">◀</a>Lista completa de Produtos</h1>
         <table class="tab">
             <thead>
                 <th>Nome</th>

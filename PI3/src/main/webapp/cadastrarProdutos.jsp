@@ -13,23 +13,22 @@
         <link href="https://fonts.googleapis.com/css2?family=Commissioner&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
         <link href="estilos.css" rel="stylesheet">
-        <title>JSP Page</title>
+        <title>Cadastro de Produtos</title>
     </head>
     <body>
-        <h1><a id="voltar" href="index.jsp">◀</a>criando um novo produtin</h1>
+        <h1><a id="voltar" href="index.jsp">◀</a>Cadastrar novo produto</h1>
         <form action="CadastrarProduto" method="POST">
-            <input name="id" type="" value="${count}">
             <p class="p_form">Nome</p>
-            <input name="nome">
+            <input class="input_form" name="nome">
             <p class="p_form">descrição</p>
-            <input name="desc">
+            <input class="input_form" name="desc">
             <p class="p_form">categoria</p>
-            <input name="categoria">
+            <input class="input_form" name="categoria">
             <p class="p_form">Quantidade</p>
-            <input name="qtd">
+            <input class="input_form" name="qtd">
             <p class="p_form">preço</p>
-            <input name="preco">
-            <button type="submit">Enviar</button>
+            <input class="input_form" name="preco">
+            <button type="submit" class="submit">Enviar</button>
         </form>
     </body>
 </html>

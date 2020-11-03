@@ -12,22 +12,22 @@
         <link href="https://fonts.googleapis.com/css2?family=Commissioner&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
         <link href="estilos.css" rel="stylesheet">
-        <title>JSP Page</title>
+        <title>Cadastro de Clientes</title>
     </head>
     <body>
-        <h1><a id="voltar" href="index.jsp">◀</a>criando um novo mulequin</h1>
+        <h1><a id="voltar" href="index.jsp">◀</a>Cadastro de Cliente</h1>
         <form action="CadastrarClientes" method="POST">
             <p class="p_form">Nome</p>
-            <input name="nome">
+            <input name="nome" class="input_form">
             <p class="p_form">Email</p>
-            <input name="Email">
+            <input name="Email" class="input_form">
             <p class="p_form">CPF</p>
-            <input name="cpf">
+            <input name="cpf" class="input_form">
             <p class="p_form">telefone</p>
-            <input name="telefone">
+            <input name="telefone" class="input_form">
             <p class="p_form">endereço</p>
-            <input name="endereco">
-            <button type="submit">Enviar</button>
+            <input name="endereco" class="input_form">
+            <button type="submit" class="submit">Enviar</button>
         </form>
     </body>
 </html>

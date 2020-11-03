@@ -37,7 +37,7 @@ public class VendaDAO {
                 double preco = rs.getDouble("preco");
                 int filial = rs.getInt("idfilial");
                 
-                listaVenda.add(new Venda(idVenda, idproduto, cpf, quantidade, preco, filial));
+                listaVenda.add(new Venda(idproduto, cpf, quantidade, preco, filial));
             }
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ServletBD.class.getName()).log(Level.SEVERE, null, ex);
@@ -63,21 +63,21 @@ public class VendaDAO {
         ps.setInt(1, idVenda);
         ps.execute();
     }
-      public static Venda getVenda(int idVenda) {
+      public static Venda getVenda(String condition) {
         Venda venda = null;
         try {
             Connection con = ConexaoBD.getConexao();
-            String query = "select * from venda where idvenda=?";
+            String query = "select * from venda where" + condition;
             PreparedStatement ps = con.prepareStatement(query);
-            ps.setLong(1, idVenda);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
+                int idVenda = rs.getInt("idvenda");
                 int idproduto = rs.getInt("id");
                 long cpf = rs.getLong("cpf");
                 int quantidade = rs.getInt("quantidade");
                 double preco = rs.getDouble("preco");
                 int filial = rs.getInt("idfilial");
-                venda = new Venda(idVenda, idproduto, cpf, quantidade, preco, filial);
+                venda = new Venda(idproduto, cpf, quantidade, preco, filial);
             }
 
         } catch (ClassNotFoundException | SQLException ex) {

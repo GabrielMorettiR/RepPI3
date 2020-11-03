@@ -7,6 +7,22 @@ a{
 }
 .p_form{
     font-family: 'Poppins', sans-serif;
+    display: inline;
+    padding-left: 5px;
+    text-align: right;
+}
+.form-control{
+    font-family: 'Poppins', sans-serif;
+    border: 1px #dddddd solid;
+    border-radius: 5px;
+    padding-right: 10px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+.input_form{
+    border: 1px #dddddd solid;
+    border-radius: 5px;
+    font-family: 'Commissioner', sans-serif;
 }
 
 /*css btn voltar*/
@@ -37,14 +53,14 @@ a{
 /*btn voltar FIM*/
 
 .tab{
-    background-color: #abbeec;
-    border: 2px solid #587ac8;
+    background-color: #eee;
+    border: 2px solid #ccc;
     border-radius: 5px;
 }
 .tab thead, th{
     font-family: 'Commissioner', sans-serif;
-    border-right: 2px solid #587ac8;
-    border-bottom: 2px solid #587ac8;
+    border-right: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
     border-radius: 2px;
 }
 .tab tbody{
@@ -76,5 +92,33 @@ a{
 .option{
     margin: 0 0 0 0;
     border-radius: 5px;
+}
+.label{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-align: right;
+    width: 100px;
+    padding-right: 10px;
+}
+.submit{
+    background-color: #5cb95c;
+    color: white;
+    font-weight: bold;
+    font-family: 'Commissioner', sans-serif;
+    border: #5cb95c 2px solid;
+    width: 80px;
+    line-height: 20px;
+    transition-duration: 0.2s;
+    border-radius: 5px;
+}
+.submit:hover{
+    background-color: white;
+    color: #5cb95c;
+    font-family: 'Commissioner', sans-serif;
+    border: #5cb95c 2px solid;
+    width: 75px;
+}
+.tab td{
+    padding: 0 10px 0 10px;
 }
 

@@ -87,6 +87,15 @@ public class ProdutoDAO extends HttpServlet {
         ps.execute();
     }
     
+    public static void vendeProduto(int id, int vendido) throws ClassNotFoundException, SQLException {
+        Connection con = ConexaoBD.getConexao();
+        String query = "update produto set quantidade=quantidade - ? where id=?";
+        PreparedStatement ps = con.prepareStatement(query);
+        ps.setInt(1, vendido);
+        ps.setInt(2, id);
+        ps.execute();
+    }
+    
     public static void deleteProduto(int id) throws ClassNotFoundException, SQLException {
         Connection con = ConexaoBD.getConexao();
         String query = "delete from produto where id=?";

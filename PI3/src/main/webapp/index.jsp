@@ -4,6 +4,7 @@
     Author     : Gabriel
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -46,5 +47,7 @@
             <a href="ListarRelatorio"><p>Relatório</p></a>
             <a href="venda.jsp"><p>Realizar Venda</p></a>
         </div>
+        <br/> 
+        <a href="<c:url value="/LogoutServlet"/>">Sair</a>
     </body>
 </html>

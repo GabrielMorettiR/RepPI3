@@ -18,6 +18,7 @@
     </head>
     <body>
         <h1><a id="voltar" href="index.jsp">◀</a>Relatório</h1>
+        <form>
         <div>
                 <p class="p_form">Cliente</p>
                 <select name="SelCliente" class="form-control">
@@ -52,7 +53,10 @@
                         </option>
                     </c:forEach>
                 </select>
+                <button class="p_form">Buscar</button>
+                
         </div>
+        </form>
         <br/>
         <table class="tab">
             <thead>

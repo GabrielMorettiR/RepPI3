@@ -36,6 +36,12 @@ public class Relatorio {
     public Relatorio() {
     }
 
+    public Relatorio (long cpf, String categoria, String filial){
+        this.cpf = cpf;
+        this.categoria = categoria;
+        this.filial = filial;
+    }
+    
     @Override
     public String toString() {
         return super.toString(); //To change body of generated methods, choose Tools | Templates.

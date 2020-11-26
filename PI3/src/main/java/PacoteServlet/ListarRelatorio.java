@@ -32,4 +32,15 @@ public class ListarRelatorio extends HttpServlet {
                 .getRequestDispatcher("/listaVendas.jsp");
         rd.forward(request, response);
     }
+    
+    @Override
+    protected void doPost (HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        Long cpf = Long.parseLong(request.getParameter("SelCliente"));
+        String categoria = request.getParameter("SelCateg");
+        String filial = request.getParameter("SelFili");
+        
+        Relatorio r = new Relatorio(cpf, categoria, filial);
+        RelatorioDAO.getVendas();
+    }
 }

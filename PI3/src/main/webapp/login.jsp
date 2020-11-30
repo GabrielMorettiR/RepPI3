@@ -18,14 +18,14 @@
     </head>
     <body>
         <h1>Tela de Login</h1>
-        <c:if test="${param.erro != null}">
-            <div>Usuário não encontrado parsa /:</div>
+        <c:if test="${param.erro == 1}">
+            <div>Usuário não Encontrado</div>
         </c:if>
         <form action="loginServlet" method="POST">
             <p class="p_form">Nome de Usuário: </p>
-            <input name="usuario" class="input_form">
+            <input name="login" class="input_form" required>
             <p class="p_form">Senha: </p>
-            <input type="password" name="senha" class="input_form">
+            <input type="password" name="senha" class="input_form" required>
             <button type="submit" class="submit">Entrar</button>
         </form>
     </body>

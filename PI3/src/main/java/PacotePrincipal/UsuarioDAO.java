@@ -33,9 +33,7 @@ public class UsuarioDAO {
                 usuario.setPerfil(perfil);
                 usuario.setLogin(login);
             }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ServletBD.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ServletBD.class.getName()).log(Level.SEVERE, null, ex);
         }
         return usuario;

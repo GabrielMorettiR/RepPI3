@@ -17,4 +17,11 @@ public class Usuario {
     private String senha;
     private String perfil;
     
+    public boolean isAdmin(){
+        return this.perfil.equalsIgnoreCase("admin");
+    }
+    
+    public boolean isGerente(){
+        return this.perfil.equalsIgnoreCase("gerente");
+    }
 }

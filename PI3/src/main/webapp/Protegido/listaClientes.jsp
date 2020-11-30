@@ -17,7 +17,7 @@
 
     </head>
     <body>
-        <h1><a id="voltar" href="index.jsp">◀</a>Lista completa de Clientes</h1>
+        <h1><a id="voltar" href="Protegido/index.jsp">◀</a>Lista completa de Clientes</h1>
         <table class="tab">
             <thead>
             <th>Nome</th>

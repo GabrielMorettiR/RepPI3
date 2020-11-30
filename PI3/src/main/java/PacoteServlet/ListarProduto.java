@@ -24,7 +24,7 @@ public class ListarProduto extends HttpServlet {
         request.setAttribute("listaProdutos", listaProdutos);
         
         RequestDispatcher requestDispatcher = getServletContext()
-                .getRequestDispatcher("/listaProdutos.jsp");
+                .getRequestDispatcher("/Protegido/listaProdutos.jsp");
         requestDispatcher.forward(request, response);
     }
 }

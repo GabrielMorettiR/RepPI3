@@ -1,5 +1,11 @@
-package Filtros;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Filtro;
 
+import Entidades.Usuario;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
@@ -10,15 +16,17 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Bruno
+ * @author Gabriel
  */
-public class Autorizacao implements Filter {
+@WebFilter(filterName = "Acesso", urlPatterns = {"/*"})
+public class Acesso implements Filter {
     
     private static final boolean debug = true;
 
@@ -27,25 +35,31 @@ public class Autorizacao implements Filter {
     // configured. 
     private FilterConfig filterConfig = null;
     
-    public Autorizacao() {
+    public Acesso() {
     }    
     
     private void doBeforeProcessing(ServletRequest request, ServletResponse response)
             throws IOException, ServletException {
         
-        HttpServletRequest servletRequest = (HttpServletRequest) request;
-        HttpServletResponse servletResponse = (HttpServletResponse) response;
+        HttpServletRequest httpRequest = (HttpServletRequest) request;
+        HttpServletResponse httpResponse = (HttpServletResponse) response;
         
-        HttpSession sessao = servletRequest.getSession();
-        if (sessao.getAttribute("usuario") == null){
-            servletResponse.sendRedirect(servletRequest.getContextPath() + "/login.jsp");
+        HttpSession sessao = httpRequest.getSession();
+        if(sessao.getAttribute("usuario") == null){
+            httpResponse.sendRedirect(httpRequest.getContextPath() + "/login.jsp");
+        }        
+        
+        Usuario usuario = (Usuario) sessao.getAttribute("usuario");
+        String url = httpRequest.getRequestURI();
+        if(url.contains("cadastrarClientes.jsp") && !usuario.isAdmin()){
+            httpResponse.sendRedirect(httpRequest.getContextPath() + "/noAccess.jsp");
         }
-        
-        
-    }
+            
+    }    
     
     private void doAfterProcessing(ServletRequest request, ServletResponse response)
             throws IOException, ServletException {
+        
     }
 
     /**
@@ -57,13 +71,12 @@ public class Autorizacao implements Filter {
      * @exception IOException if an input/output error occurs
      * @exception ServletException if a servlet error occurs
      */
-    
     public void doFilter(ServletRequest request, ServletResponse response,
             FilterChain chain)
             throws IOException, ServletException {
         
         if (debug) {
-            log("Autorizacao:doFilter()");
+            log("Acesso:doFilter()");
         }
         
         doBeforeProcessing(request, response);
@@ -97,7 +110,6 @@ public class Autorizacao implements Filter {
     /**
      * Return the filter configuration object for this filter.
      */
-    
     public FilterConfig getFilterConfig() {
         return (this.filterConfig);
     }
@@ -124,7 +136,7 @@ public class Autorizacao implements Filter {
         this.filterConfig = filterConfig;
         if (filterConfig != null) {
             if (debug) {                
-                log("Autorizacao:Initializing filter");
+                log("Acesso:Initializing filter");
             }
         }
     }
@@ -135,9 +147,9 @@ public class Autorizacao implements Filter {
     @Override
     public String toString() {
         if (filterConfig == null) {
-            return ("Autorizacao()");
+            return ("Acesso()");
         }
-        StringBuffer sb = new StringBuffer("Autorizacao(");
+        StringBuffer sb = new StringBuffer("Acesso(");
         sb.append(filterConfig);
         sb.append(")");
         return (sb.toString());

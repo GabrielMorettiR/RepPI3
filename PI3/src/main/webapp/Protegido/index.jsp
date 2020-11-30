@@ -20,6 +20,7 @@
             a{
                 font-weight: bold;
                 color: #3664d1;
+                width: 10%;
             }
             p{
                 font-family: 'Poppins', sans-serif;
@@ -40,10 +41,18 @@
     <body>
         <div align="center">
             <h1>Sistema para Jogos Os Nerdolas</h1>
-            <a href="ListarClientes"><p>Lista de Clientes</p></a>
+            <a href="<c:url value="/ListarClientes"/>"><p>Lista de Clientes</p></a>
+            
+            <c:if test="${sessionScope.usuario.admin}">
             <a href="cadastrarClientes.jsp"><p>Cadastrar Clientes</p></a>
-            <a href="ListarProduto"><p>Lista de Produtos</p></a>
+            </c:if>
+            
+            <a href="<c:url value="/ListarProduto"/>"><p>Lista de Produtos</p></a>
+            
+            <c:if test="${sessionScope.usuario.gerente}">
             <a href="cadastrarProdutos.jsp"><p>Cadastrar Produtos</p></a>
+            </c:if>
+            
             <a href="ListarRelatorio"><p>Relatório</p></a>
             <a href="venda.jsp"><p>Realizar Venda</p></a>
         </div>

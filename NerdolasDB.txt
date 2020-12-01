@@ -34,6 +34,13 @@ nome char(30),
 endereco char(40)
 )
 
+create table usuario(
+nome varchar(50),
+login varchar(50),
+senha varchar(50),
+perfil varchar(50)
+)
+
 ALTER TABLE produto ADD CONSTRAINT idcategoria
 FOREIGN KEY(idcategoria) REFERENCES categoria(id);
 

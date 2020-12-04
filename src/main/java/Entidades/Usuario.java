@@ -1,6 +1,5 @@
 package Entidades;
 
-//import at.favre.lib.crypto.bcrypt.BCrypt;
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,22 +17,23 @@ public class Usuario {
     private String login;
     private String senha;
     private String perfil;
+    private int idperfil;
     private int filial;
 
     public Usuario() {
     }
     
-    public Usuario(String nome, String login, String perfil) {
+    public Usuario(String nome, String login, int perfil) {
         this.nome = nome;
         this.login = login;
-        this.perfil = perfil;
+        this.idperfil = perfil;
     }
     
-    public Usuario(String nome, String login, String senha, String perfil, int filial) {
+    public Usuario(String nome, String login, String senha, int perfil, int filial) {
         this.nome = nome;
         this.login = login;
         this.senha = senha;
-        this.perfil = perfil;
+        this.idperfil = perfil;
         this.filial = filial;
     }
     
@@ -47,10 +47,23 @@ public class Usuario {
     }
     
     public boolean isAdmin(){
-        return this.perfil.equalsIgnoreCase("admin");
+        if(this.idperfil == 1){
+            return true;
+        }
+        return false;
     }
     
     public boolean isGerente(){
-        return this.perfil.equalsIgnoreCase("gerente");
+        if(this.idperfil == 2){
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean isVendedor(){
+        if(this.idperfil == 3){
+            return true;
+        }
+        return false;
     }
 }

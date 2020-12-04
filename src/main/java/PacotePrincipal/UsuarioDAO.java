@@ -19,21 +19,24 @@ public class UsuarioDAO {
         Usuario usuario = null;
         try {
             Connection con = ConexaoBD.getConexao();
-            String query = "select * from usuario where login=?";
+            String query = "select u.NOME,u.login,u.SENHA,u.PERFIL,u.IDFILIAL, p.NOME as perf"
+                    + " from usuario u join perfil p on u.PERFIL = p.ID where u.login=?";
             PreparedStatement ps = con.prepareStatement(query);
             ps.setString(1, login);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 String nome = rs.getString("nome");
-                String perfil = rs.getString("perfil");
+                int perfil = rs.getInt("perfil");
                 String senha = rs.getString("senha");
+                String perf = rs.getString("perf");
                 int filial = rs.getInt("idfilial");
                 usuario = new Usuario();
                 usuario.setNome(nome);
-                usuario.setPerfil(perfil);
+                usuario.setIdperfil(perfil);
                 usuario.setLogin(login);
                 usuario.setSenha(senha);
                 usuario.setFilial(filial);
+                usuario.setPerfil(perf);
             }
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ServletDB.class.getName()).log(Level.SEVERE, null, ex);
@@ -48,7 +51,7 @@ public class UsuarioDAO {
         ps.setString(1, u.getNome());
         ps.setString(2, u.getLogin());
         ps.setString(3, u.getSenha());
-        ps.setString(4, u.getPerfil());
+        ps.setInt(4, u.getIdperfil());
         ps.setInt(5, u.getFilial());
         ps.execute();
     }

@@ -28,11 +28,12 @@
             <input type="password" name="senha" class="input_form" required>
             <button type="submit" class="submit">Entrar</button>
         </form>
-            <footer>
-                Desenvolvido por Bruno de Marzio<br/>
-                Gabriel Moretti<br/>
-                Ivan Takano<br/>
-                Leonardo Motta<br/>
-            </footer>
+        <footer id='footer'>
+            <p class='pfooter'>Desenvolvedores: 
+                Bruno de Marzio 
+                Ξ Gabriel Moretti 
+                Ξ Ivan Takano 
+                Ξ Leonardo Motta </p>
+        </footer>
     </body>
 </html>

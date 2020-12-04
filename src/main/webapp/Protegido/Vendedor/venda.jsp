@@ -21,7 +21,7 @@
         <div class="main">
 
             <h1><a id="voltar" href="Protegido/index.jsp">◀</a>Nova Venda</h1>
-            <form action="CadastrarVenda" method="POST">
+            <form action="CadastrarVendas" method="POST">
                 <p class="p_form">idproduto</p>
                 <input class="input_form" name="idproduto" required>
                 <select name="SelProd" class="form-control">

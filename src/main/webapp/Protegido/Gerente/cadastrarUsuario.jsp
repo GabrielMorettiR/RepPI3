@@ -18,7 +18,7 @@
         <%@include file="../Menu_inc.jsp" %>
         <div class="main">
             <h1><a id="voltar" href="Protegido/index.jsp">◀</a>Cadastro de novo Usuário</h1>
-            <form action="CadastrarUsuario" method="POST">
+            <form action="CadastraUsuario" method="POST">
                 <p class="p_form">Nome</p>
                 <input name="nome" class="input_form" required>
                 <p class="p_form">Login</p>

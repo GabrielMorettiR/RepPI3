@@ -1,0 +1,158 @@
+.main {
+  margin-left: 180px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+h1{
+    font-family: 'Commissioner', sans-serif;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: none;
+}
+.p_form{
+    font-family: 'Poppins', sans-serif;
+    display: inline;
+    padding-left: 5px;
+    text-align: right;
+}
+.form-control{
+    font-family: 'Poppins', sans-serif;
+    border: 1px #dddddd solid;
+    border-radius: 5px;
+    padding-right: 10px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+.input_form{
+    border: 1px #dddddd solid;
+    border-radius: 5px;
+    font-family: 'Commissioner', sans-serif;
+}
+
+/*css btn voltar*/
+#voltar{
+    color: #333333;
+    transition-duration: 0.2s;
+    position: relative;
+    padding-right: 5px;
+}
+#voltar:hover{
+    text-shadow:0 0 5px #222;
+    animation: mymove 0.2s;
+    animation-fill-mode:forwards;
+    animation-timing-function: ease;
+}
+#voltar:not(:hover){
+    animation: mymoveback 0.2s;
+    animation-timing-function: ease;
+}
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 4px;}
+}
+@keyframes mymoveback {
+    from {left: 4px;}
+    to {left: 0px;}
+}
+/*btn voltar FIM*/
+
+.tab{
+    background-color: #eee;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+.tab thead, th{
+    background-color: #fff;
+    font-family: 'Commissioner', sans-serif;
+    border-radius: 2px;
+}
+.tab tbody{
+    font-family: 'Poppins', sans-serif;
+}
+
+.options{
+    width: 80px;
+    text-align: center;   
+}
+#alter{
+    color: white;
+    background-color: #31923a;
+    transition-duration: 0.2s;
+}
+#alter:hover{
+    color: #31923a;
+    background-color: white;
+}
+#excluir{
+    color: white;
+    background-color: #da5252;
+    transition-duration: 0.2s;
+}
+#excluir:hover{
+    color: #da5252;
+    background-color: white;
+}
+.option{
+    margin: 0 0 0 0;
+    border-radius: 5px;
+}
+.label{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-align: right;
+    width: 100px;
+    padding-right: 10px;
+}
+.submit{
+    background-color: #5cb95c;
+    color: white;
+    font-weight: bold;
+    font-family: 'Commissioner', sans-serif;
+    border: #5cb95c 2px solid;
+    width: 80px;
+    line-height: 20px;
+    transition-duration: 0.2s;
+    border-radius: 5px;
+}
+.submit:hover{
+    background-color: white;
+    color: #5cb95c;
+    font-family: 'Commissioner', sans-serif;
+    border: #5cb95c 2px solid;
+    width: 82px;
+}
+.tab td{
+    padding: 0 10px 0 10px;
+}
+h3{
+    font-family: 'Commissioner', sans-serif;
+}
+
+#menu{
+    padding: 20px;
+}
+.sair{
+    font-family: 'Commissioner', sans-serif;
+    transition-duration: 0.2s;
+    padding: 5px;
+    color: #444;
+}
+.sair:hover{
+    background-color: #222;
+    border-radius: 1px;
+    color: #999;
+}
+.footer{
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+}
+

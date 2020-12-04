@@ -17,6 +17,13 @@ public class Venda {
     private int quantidade;
     private double preco;
     private int filial;
+
+    public Venda(int idproduto, long cpf, int quantidade, int filial) {
+        this.idproduto = idproduto;
+        this.cpf = cpf;
+        this.quantidade = quantidade;
+        this.filial = filial;
+    }
     
     public Venda(int idproduto, long cpf, int quantidade, double preco, int filial) {
         this.idproduto = idproduto;

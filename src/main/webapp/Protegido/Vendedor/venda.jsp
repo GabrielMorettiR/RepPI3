@@ -23,7 +23,7 @@
             <h1><a id="voltar" href="Protegido/index.jsp">◀</a>Nova Venda</h1>
             <form action="CadastrarVendas" method="POST">
                 <p class="p_form">idproduto</p>
-                <input class="input_form" name="idproduto" required>
+                <input class="input_form" name="idproduto" id="idproduto" onblur="mostraPreco();" required>
                 <select name="SelProd" class="form-control">
                     <option>Lista de produtos</option>
                     <c:forEach var="produto" items="${listaProdutos}">
@@ -45,10 +45,10 @@
 
                 <p class="p_form">quantidade</p>
                 <input class="input_form" name="quantidade" required>
-                <p class="p_form">preço</p>
-                <input class="input_form" name="preco">
+<!--                <p class="p_form">preço</p>
+                <input class="input_form" name="preco" type="">-->
                 <p class="p_form">Id Filial</p>
-                <input class="input_form" name="filial" required>
+                <input class="input_form" name="filial" readonly="true" value="${sessionScope.usuario.idperfil}">
                 <select name="SelFilial" class="form-control">
                     <option>Lista de filiais</option>
                     <c:forEach var="filial" items="${listaFiliais}">
@@ -57,15 +57,9 @@
                         </option>
                     </c:forEach>
                 </select>
+                <!--<a href="<c:url value="/SalvaCarrinho?id=8"/>"><p>+ Carrinho</p></a>-->
                 <button type="submit" class="submit">Vender</button>
             </form>
         </div>
-        <script>
-            function addProduto(id) {
-                $.get("CarrinhoServlet?id=" + id, function () {
-                    console.log("OK");
-                });
-            }
-        </script>
     </body>
 </html>

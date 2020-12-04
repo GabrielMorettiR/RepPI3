@@ -4,6 +4,7 @@ import Entidades.Cliente;
 import Entidades.Filial;
 import Entidades.Produto;
 import Entidades.Venda;
+import PacotePrincipal.CarrinhoDAO;
 import PacotePrincipal.ClienteDAO;
 import PacotePrincipal.FilialDAO;
 import PacotePrincipal.ProdutoDAO;
@@ -51,17 +52,28 @@ public class CadastrarVendas extends HttpServlet {
         int idproduto = Integer.parseInt(request.getParameter("idproduto"));
         Long cpf = Long.parseLong(request.getParameter("cpf"));
         int quantidade = Integer.parseInt(request.getParameter("quantidade"));
-        double preco = Double.parseDouble(request.getParameter("preco"));
         int filial = Integer.parseInt(request.getParameter("filial"));
-        Venda p = new Venda(idproduto, cpf, quantidade, preco, filial);
-
+        Venda p = new Venda(idproduto, cpf, quantidade, filial);
+        boolean b = false;
         try {
-            ProdutoDAO.vendeProduto(idproduto, quantidade);
-            VendaDAO.addVenda(p);
-            Utils.Sucesso(response);
+            b = ProdutoDAO.vendeProduto(idproduto, quantidade);
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(CadastrarVendas.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+        try {
+//            CarrinhoDAO.addProduto(idproduto, quantidade, preco);
+            if (b) {
+                VendaDAO.addVenda(p);
+                Utils.Sucesso(response);
+            }
+            else{
+            Utils.Qtd(response);
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(CadastrarVendas.class.getName()).log(Level.SEVERE, null, ex);
+            Utils.Erro(ex, request, response);
+        }
     }
 }
+

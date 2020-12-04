@@ -17,7 +17,7 @@
     </head>
     <body>
         <h1><a id="voltar" href="<c:url value="/ListarProduto"/>">◀</a>Produto ${produto.nome}</h1>
-        <form action="AlterarProduto" method="POST">
+        <form action="AlteraProduto" method="POST">
             <input class="input_form" name="id" type="hidden" value="${produto.id}">
             <p class="p_form">Nome</p>
             <input class="input_form" name="nome" value="${produto.nome}" required>

@@ -49,35 +49,35 @@
     <body>
         <div class="sidenav">
             <h1 id="sidetitle">Nerdolas</h1>
-            <c:if test="${sessionScope.usuario.gerente}">
+            <%--<c:if test="${sessionScope.usuario.gerente}">--%>
                 <%--<c:if test="${sessionScope.usuario.admin || sessionScope.usuario.gerente}">--%>
                 <a class="sidebtn" href="<c:url value="/ListaClientes"/>"><p class='sidep'>Lista de Clientes</p></a>
-            </c:if>
+            <%--</c:if>--%>
 
-            <c:if test="${sessionScope.usuario.admin}">
+            <%--<c:if test="${sessionScope.usuario.admin}">--%>
                 <a class="sidebtn" href="<c:url value="/CadastrarCliente"/>"><p class='sidep'>Cadastrar Clientes</p></a>
-            </c:if>
+            <%--</c:if>--%>
 
-            <c:if test="${sessionScope.usuario.gerente}">
+            <%--<c:if test="${sessionScope.usuario.gerente}">--%>
                 <%--<c:if test="${sessionScope.usuario.admin || sessionScope.usuario.gerente}">--%>
                 <a class="sidebtn" href="<c:url value="/ListaProdutos"/>"><p class='sidep'>Lista de Produtos</p></a>
-            </c:if>
+            <%--</c:if>--%>
 
-            <c:if test="${sessionScope.usuario.admin}">
+            <%--<c:if test="${sessionScope.usuario.admin}">--%>
                 <a class="sidebtn" href="<c:url value="/CadastraProduto"/>"><p class='sidep'>Cadastrar Produtos</p></a>
-            </c:if>
+            <%--</c:if>--%>
 
-            <c:if test="${sessionScope.usuario.gerente} ">
+            <%--<c:if test="${sessionScope.usuario.gerente} ">--%>
                 <a class="sidebtn" href="<c:url value="/ListaRelatorio"/>"><p class='sidep'>Relatório</p></a>
-            </c:if>
+            <%--</c:if>--%>
 
-            <c:if test="${sessionScope.usuario.vendedor}">
+            <%--<c:if test="${sessionScope.usuario.vendedor}">--%>
                 <a class="sidebtn" href="<c:url value="/CadastrarVendas"/>"><p class='sidep'>Realizar Venda</p></a>
-            </c:if>
+            <%--</c:if>--%>
 
-            <c:if test="${sessionScope.usuario.gerente}">
+            <%--<c:if test="${sessionScope.usuario.gerente}">--%>
                 <a class="sidebtn" href="<c:url value="/CadastraUsuario"/>"><p class='sidep'>Cadastrar Usuário</p></a>
-            </c:if>
+            <%--</c:if>--%>
             <a class="sidebtn" href="<c:url value="/Logout_Servlet"/>" class="sair"><p id="sair">Sair</p></a>
         </div>
     </body>

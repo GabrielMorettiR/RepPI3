@@ -136,6 +136,10 @@
         <servlet-name>CadastraUsuario</servlet-name>
         <servlet-class>PacoteServlet.CadastraUsuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SalvaCarrinho</servlet-name>
+        <servlet-class>PacoteServlet.SalvaCarrinho</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletBD</servlet-name>
         <url-pattern>/ServletBD</url-pattern>
@@ -259,6 +263,10 @@
     <servlet-mapping>
         <servlet-name>CadastraUsuario</servlet-name>
         <url-pattern>/CadastraUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SalvaCarrinho</servlet-name>
+        <url-pattern>/SalvaCarrinho</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

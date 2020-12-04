@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="jquery.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="https://fonts.googleapis.com/css2?family=Commissioner&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
@@ -35,20 +36,12 @@
                             <td>${produto.categoria}</td>
                             <td>${produto.quantidade}</td>
                             <td>R$ ${produto.preco}</td>
-                            <td><button class="submit" onclick="addProduto(${produto.id})">+ Carrinho</button></td>
-                            <td class="options"><a href="AlterarProduto?id=${produto.id}"><p id="alter" class="option">Alterar</p></a></td>
-                            <td class="options"><a href="ExcluirProduto?id=${produto.id}" onclick="return confirm('Confirma a exclusão do produto ${produto.nome}?')"><p id="excluir" class="option">Excluir</p></a></td>
+                            <td class="options"><a href="AlteraProduto?id=${produto.id}"><p id="alter" class="option">Alterar</p></a></td>
+                            <td class="options"><a href="ExcluirProdutos?id=${produto.id}" onclick="return confirm('Confirma a exclusão do produto ${produto.nome}?')"><p id="excluir" class="option">Excluir</p></a></td>
                         </tr>
                     </c:forEach>
                 </tbody>
             </table>
         </div>
-        <script lang="text/javascript">
-            function addProduto(id){
-                $.get("CarrinhoServlet?id="+id, function( resposta){
-                    console.log("OK");
-                });
-            }
-        </script>
     </body>
 </html>

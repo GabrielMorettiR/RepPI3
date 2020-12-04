@@ -28,4 +28,8 @@ public class Utils {
     public static void Sucesso(HttpServletResponse response) throws ServletException, IOException{
         response.sendRedirect("Protegido/sucesso.jsp");
     }
+    
+    public static void Qtd(HttpServletResponse response) throws ServletException, IOException{
+        response.sendRedirect("Protegido/quantidade.jsp");
+    }
 }

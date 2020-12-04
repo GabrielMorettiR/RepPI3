@@ -17,7 +17,7 @@
     </head>
     <body>
         <h1><a id="voltar" href="<c:url value="/ListarClientes"/>">◀</a>Alteração do melequin ${cliente.nome}</h1>
-        <form action="AlterarClientes" method="POST">
+        <form action="AlteraCliente" method="POST">
             <p class="p_form">Nome</p>
             <input class="input_form" name="nome" value="${cliente.nome}" required>
             <p class="p_form">Email</p>

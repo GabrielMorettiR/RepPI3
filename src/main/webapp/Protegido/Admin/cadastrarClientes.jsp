@@ -19,7 +19,7 @@
         <%@include file="../Menu_inc.jsp" %>
         <div class="main">
             <h1><a id="voltar" href="Protegido/index.jsp">◀</a>Cadastro de Cliente</h1>
-            <form action="CadastrarClientes" method="POST">
+            <form action="CadastrarCliente" method="POST">
                 <p class="p_form">Nome</p>
                 <input name="nome" class="input_form" required>
                 <p class="p_form">Email</p>

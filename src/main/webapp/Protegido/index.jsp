@@ -69,35 +69,35 @@
             <div class="col-sm-6" align="center">
                 <h1>Sistema para Jogos Os Nerdolas</h1>
                 <div class="btns">
-                    <c:if test="${sessionScope.usuario.gerente}">
+                    <%--<c:if test="${sessionScope.usuario.gerente}">--%>
                         <%--<c:if test="${sessionScope.usuario.admin || sessionScope.usuario.gerente}">--%>
                         <a href="<c:url value="/ListaClientes"/>"><p class='menuBtn'>Lista de Clientes</p></a>
-                    </c:if>
+                    <%--</c:if>--%>
 
-                    <c:if test="${sessionScope.usuario.admin}">
+                    <%--<c:if test="${sessionScope.usuario.admin}">--%>
                         <a href="<c:url value="/CadastrarCliente"/>"><p class='menuBtn'>Cadastrar Clientes</p></a>
-                    </c:if>
+                    <%--</c:if>--%>
 
-                    <c:if test="${sessionScope.usuario.gerente}">
+                    <%--<c:if test="${sessionScope.usuario.gerente}">--%>
                         <%--<c:if test="${sessionScope.usuario.admin || sessionScope.usuario.gerente}">--%>
                         <a href="<c:url value="/ListaProdutos"/>"><p class='menuBtn'>Lista de Produtos</p></a>
-                    </c:if>
+                    <%--</c:if>--%>
 
-                    <c:if test="${sessionScope.usuario.admin}">
+                    <%--<c:if test="${sessionScope.usuario.admin}">--%>
                         <a href="<c:url value="/CadastraProduto"/>"><p class='menuBtn'>Cadastrar Produtos</p></a>
-                    </c:if>
+                    <%--</c:if>--%>
 
-                    <c:if test="${sessionScope.usuario.gerente}">
+                    <%--<c:if test="${sessionScope.usuario.gerente}">--%>
                         <a href="<c:url value="/ListaRelatorio"/>"><p class='menuBtn'>Relatório</p></a>
-                    </c:if>
+                    <%--</c:if>--%>
 
-                    <c:if test="${sessionScope.usuario.vendedor}">
+                    <%--<c:if test="${sessionScope.usuario.vendedor}">--%>
                         <a href="<c:url value="/CadastrarVendas"/>"><p class='menuBtn'>Realizar Venda</p></a>
-                    </c:if>
+                    <%--</c:if>--%>
 
-                    <c:if test="${sessionScope.usuario.gerente}">
+                    <%--<c:if test="${sessionScope.usuario.gerente}">--%>
                         <a href="<c:url value="/CadastraUsuario"/>"><p class='menuBtn'>Cadastrar Usuário</p></a>
-                    </c:if>
+                    <%--</c:if>--%>
                 </div>
             </div>
             <div class="col-sm-3" align='right'>
